@@ -23,7 +23,7 @@ emp_dict = {}
 #use a loop to iterate through the csv file
 
 for row in reader:
-     if row[3] == 'Marketing':
+     if row[3] == 'Marketing' and row[4] == 'CSR':
         emp_list.append(row[1])
         emp_list.append(row[2])
         emp_list.append(row[5])
@@ -36,7 +36,7 @@ for row in reader:
     #check if the employee fits the search criteria
 
 for row in reader:
-    if row[3] == 'Marketing':
+    if row[3] == 'Marketing' and row[4] =='CSR':
         print('Manager name: ', row[1], row[2], 'Salary: ', row[5])
 
     
@@ -45,10 +45,11 @@ print()
 print('=========================================')
 print()
 
+
 for emp in emp_dict:
-    emp_dict[emp] = float(emp_dict[emp]) * 1.10
+    emp_dict[emp] = round(float(emp_dict[emp]) * 1.10,2)
     for k,j in emp_dict.items():
-        print('Manager Name: ', k, 'Salary: ', j )
+        print('Manager Name: ', k, 'New Salary: ', j)
 
 #iternate through the dictionary and print out the key and value as per printout
 
